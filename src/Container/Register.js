@@ -1,6 +1,35 @@
 import React, {Component} from 'react';
-
+import axios from 'axios';
+import { error } from 'jquery';
 class Register extends Component{
+
+    state = {
+        firstName : "",
+        lastName : "",
+        dob : "",
+        userName : "",
+        email : "",
+        password : "",
+    }
+    sendUserData = (e) =>{
+        e.preventDefault();
+        const data = {
+            firstName : this.state.firstName,
+            lastName : this.state.lastName,
+            dob : this.state.dob,
+            userName : this.state.userName,
+            email : this.state.email,
+            password : this.state.password
+        }
+        axios.post("https://localhost:90/registerUser",data)
+        .then(response=>{
+            console.log(response)
+        })
+        .catch(error=>{
+            console.log(error);
+        });
+    }
+
     render(){
     return (
         <div>
@@ -21,7 +50,7 @@ class Register extends Component{
                         <input type="checkbox" class="form-check-input" id="exampleCheck1"/>
                         <label class="form-check-label" for="exampleCheck1">Check me out</label>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary" onClick={this.sendUserData}>Register</button>
                 </form>
             </div>
         )
