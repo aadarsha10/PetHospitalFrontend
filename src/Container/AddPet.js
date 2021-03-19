@@ -1,27 +1,23 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import { error, event } from 'jquery';
-class Register extends Component{
+class AddPets extends Component{
 
     state = {
-        firstName : "",
-        lastName : "",
-        dob : "",
-        userName : "",
-        email : "",
-        password : "",
+        Petname : "",
+        PetAge : "",
+        PetType : "",
+        PetBreed : "",
     }
     sendUserData = (e) =>{
         e.preventDefault();
         const data = {
-            firstName : this.state.firstName,
-            lastName : this.state.lastName,
-            dob : this.state.dob,
-            userName : this.state.userName,
-            email : this.state.email,
-            password : this.state.password
+            Petname : this.state.firstName,
+            PetAge : this.state.lastName,
+            PetType : this.state.dob,
+            PetBreed : this.state.userName
         }
-        axios.post("https://localhost:90/registerUser",data)
+        axios.post("https://localhost:90/addpets",data)
         .then(response=>{
             console.log(response)
         })
@@ -34,14 +30,14 @@ class Register extends Component{
     return (
         <div>
                 <h1>
-                Registration form
+                Pet Registration form
                 </h1>
                 <form>
                     <div class="form-group">
-                        <label for="inputFirstName">FirstName</label>
-                        <p><input type="text" class="form-control" id="firstName" placeholder="FirstName" 
-                        value={this.state.firstName}
-                        onChange = {(event)=>{this.setState({firstName:event.target.value})}}/></p>
+                        <label for="inputPetName">PetName</label>
+                        <p><input type="text" class="form-control" id="PetName" placeholder="PetName" 
+                        value={this.state.Petname}
+                        onChange = {(event)=>{this.setState({PetName:event.target.value})}}/></p>
                     </div>
                     <div class="form-group">
                         <label for="lastName">lastName</label>
@@ -80,4 +76,4 @@ class Register extends Component{
         )
     }
 }
-export default Register;
+export default AddPets;
