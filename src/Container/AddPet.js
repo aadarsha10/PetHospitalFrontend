@@ -40,14 +40,14 @@ class AddPets extends Component{
                         onChange = {(event)=>{this.setState({PetName:event.target.value})}}/></p>
                     </div>
                     <div class="form-group">
-                        <label for="lastName">lastName</label>
-                        <p><input type="text" class="form-control" id="lastName" placeholder="LastName" 
-                        value={this.state.lastName}
-                        onChange = {(event)=>{this.setState({lastName:event.target.value})}}/></p>
+                        <label for="PetAge">PetAge</label>
+                        <p><input type="text" class="form-control" id="PetAge" placeholder="PetAge" 
+                        value={this.state.PetAge}
+                        onChange = {(event)=>{this.setState({PetAge:event.target.value})}}/></p>
                     </div>
                     <div class="form-group">
-                        <label for="dob">Date of Birth</label>
-                        <input type="date" class="form-control" id="dateofbirth" placeholder="Date of Birth"
+                        <label for="PetBreed">PetBreed</label>
+                        <input type="text" class="form-control" id="PetBreed" placeholder="Date of Birth"
                         value={this.state.dob}
                         onChange = {(event)=>{this.setState({dob:event.target.value})}}/>
                     </div>
