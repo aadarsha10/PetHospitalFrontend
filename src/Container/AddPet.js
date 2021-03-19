@@ -12,10 +12,10 @@ class AddPets extends Component{
     sendUserData = (e) =>{
         e.preventDefault();
         const data = {
-            Petname : this.state.firstName,
-            PetAge : this.state.lastName,
-            PetType : this.state.dob,
-            PetBreed : this.state.userName
+            Petname : this.state.Petname,
+            PetAge : this.state.PetAge,
+            PetType : this.state.PetType,
+            PetBreed : this.state.PetBreed
         }
         axios.post("https://localhost:90/addpets",data)
         .then(response=>{
