@@ -50,7 +50,7 @@ class Pets extends Component{
                             return(
                                 <div className="col-md-3"><p>{pet.pName}</p>
                                 <p><button >Delete pet</button></p>
-                                <p><Link to={'/updatePet/' + pet._id} >Update</Link></p>
+                                <p><Link to={'/updatePet/' + pet._id}>Update</Link></p>
                                 </div>
                             )
 
