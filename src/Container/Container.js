@@ -2,6 +2,7 @@ import { Component } from "react";
 import Register from './Register';
 import {Route,NavLink, Switch } from 'react-router-dom';
 import Login from "./Login";
+import AddPets from "./AddPet";
 
 class Container extends Component{
     render(){
@@ -15,6 +16,7 @@ class Container extends Component{
                 <div className = "col-lg-6">
                 <Route path='/register' component={Register}/>
                 <Route path='/login' component={Login}/>
+                <Route path='/addpets' component={AddPets}/>
                 </div>
             </div>
          </div>

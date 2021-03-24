@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import { error, event } from 'jquery';
-class AddPets extends Component{
+class UpdatePet extends Component{
 
     state = {
         Petname : "",
@@ -64,4 +64,4 @@ class AddPets extends Component{
         )
     }
 }
-export default AddPets;
+export default UpdatePet;
