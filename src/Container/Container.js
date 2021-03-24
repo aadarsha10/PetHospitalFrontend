@@ -3,6 +3,7 @@ import Register from './Register';
 import {Route,NavLink, Switch } from 'react-router-dom';
 import Login from "./Login";
 import AddPets from "./AddPet";
+import UpdatePet from "./UpdatePet";
 
 class Container extends Component{
     render(){
@@ -17,6 +18,7 @@ class Container extends Component{
                 <Route path='/register' component={Register}/>
                 <Route path='/login' component={Login}/>
                 <Route path='/addpets' component={AddPets}/>
+                <Route path='/updatePet' component={UpdatePet}/>
                 </div>
             </div>
          </div>
