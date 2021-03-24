@@ -34,7 +34,7 @@ class AddPets extends Component{
                 </h1>
                 <form>
                     <div class="form-group">
-                        <label for="inputPetName">PetName</label>
+                        <label for="PetName">PetName</label>
                         <p><input type="text" class="form-control" id="PetName" placeholder="PetName" 
                         value={this.state.Petname}
                         onChange = {(event)=>{this.setState({PetName:event.target.value})}}/></p>
