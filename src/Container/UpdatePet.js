@@ -17,7 +17,7 @@ class UpdatePet extends Component{
             PetType : this.state.PetType,
             PetBreed : this.state.PetBreed
         }
-        axios.post("https://localhost:90/addpets",data)
+        axios.post("https://localhost:90/updatePet/:petId",data)
         .then(response=>{
             console.log(response)
         })
@@ -30,7 +30,7 @@ class UpdatePet extends Component{
     return (
         <div>
                 <h1>
-                Pet Registration form
+                Pet Details
                 </h1>
                 <form>
                     <div class="form-group">
@@ -58,7 +58,7 @@ class UpdatePet extends Component{
                         onChange = {(event)=>{this.setState({PetType:event.target.value})}}/>
                     </div>
                 
-                    <button type="submit" class="btn btn-primary" onClick={this.sendPetData}>Add Pets</button>
+                    <button type="submit" class="btn btn-primary" onClick={this.sendPetData}>Update</button>
                 </form>
             </div>
         )
