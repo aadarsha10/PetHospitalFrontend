@@ -6,7 +6,6 @@ class Register extends Component{
     state = {
         firstName : "",
         lastName : "",
-        dob : "",
         userName : "",
         email : "",
         password : "",
@@ -16,7 +15,6 @@ class Register extends Component{
         const data = {
             firstName : this.state.firstName,
             lastName : this.state.lastName,
-            dob : this.state.dob,
             userName : this.state.userName,
             email : this.state.email,
             password : this.state.password
