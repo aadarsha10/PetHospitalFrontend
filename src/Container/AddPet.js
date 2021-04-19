@@ -30,7 +30,7 @@ class AddPets extends Component{
     return (
         <div>
                 <h1>
-                Pet Registration form
+                Let Us know about your furry friend!
                 </h1>
                 <form>
                     <div class="form-group">

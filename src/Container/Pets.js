@@ -13,7 +13,7 @@ class Pets extends Component{
     //to retrieve data from the url
 
     componentDidMount(){
-        axios.get("http://localhost:90/pet/all")
+        axios.get("http://localhost:90/pet/all/")
         .then((allData) => {
             console.log(allData)
 
@@ -48,16 +48,14 @@ class Pets extends Component{
                         this.state.pet.map((pet) =>{
 
                             return(
-                                <div className="col-md-3"><p>{pet.pName}</p>
+                                <div className="col-md-3"><p>{pet.allData}</p>
                                 <p><button >Delete pet</button></p>
-                                <p><Link to={'/updatePet/' + pet._id}>Update</Link></p>
+                                <p><button><Link to={'/updatePet/' + pet._id}>Update</Link></button></p>
                                 </div>
                             )
 
                         })
                     }
-
-                    
 
                 </div>
             </div>
@@ -65,4 +63,4 @@ class Pets extends Component{
     }
 }
 
-export default Pets
+export default Pets;
