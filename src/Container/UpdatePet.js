@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import {Component} from 'react';
 import axios from 'axios';
 import { error, event } from 'jquery';
 class UpdatePet extends Component{
@@ -33,32 +33,32 @@ class UpdatePet extends Component{
                 Pet Details
                 </h1>
                 <form>
-                    <div class="form-group">
+                    <div className="form-group">
                         <label for="inputPetName">PetName</label>
-                        <p><input type="text" class="form-control" id="PetName" placeholder="PetName" 
+                        <p><input type="text" className="form-control" id="PetName" placeholder="PetName" 
                         value={this.state.Petname}
                         onChange = {(event)=>{this.setState({PetName:event.target.value})}}/></p>
                     </div>
-                    <div class="form-group">
+                    <div className="form-group">
                         <label for="PetAge">PetAge</label>
-                        <p><input type="text" class="form-control" id="PetAge" placeholder="PetAge" 
+                        <p><input type="text" className="form-control" id="PetAge" placeholder="PetAge" 
                         value={this.state.PetAge}
                         onChange = {(event)=>{this.setState({PetAge:event.target.value})}}/></p>
                     </div>
-                    <div class="form-group">
+                    <div className="form-group">
                         <label for="PetBreed">PetBreed</label>
-                        <input type="text" class="form-control" id="PetBreed" placeholder="petBreed"
+                        <input type="text" className="form-control" id="PetBreed" placeholder="petBreed"
                         value={this.state.PetType}
                         onChange = {(event)=>{this.setState({PetType:event.target.value})}}/>
                     </div>
-                    <div class="form-group">
+                    <div className="form-group">
                         <label for="PetType">PetType</label>
-                        <input type="text" class="form-control" id="PetType" placeholder="PetType"
+                        <input type="text" className="form-control" id="PetType" placeholder="PetType"
                         value={this.state.PetType}
                         onChange = {(event)=>{this.setState({PetType:event.target.value})}}/>
                     </div>
                 
-                    <button type="submit" class="btn btn-primary" onClick={this.sendPetData}>Update</button>
+                    <button type="submit" className="btn btn-primary" onClick={this.sendPetData}>Update</button>
                 </form>
             </div>
         )
