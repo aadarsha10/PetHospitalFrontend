@@ -7,6 +7,7 @@ import Pets from "./Pets";
 import { Sidebar } from "../NavBar/SideNav";
 import Register from "../Authentication/Registration/Register";
 import Login from "../Authentication/LoginUser/Login";
+import Home from "../Ui/Home/Home";
 
 class Container extends Component{
     render(){
@@ -17,7 +18,7 @@ class Container extends Component{
                 // <Route path='/register' component={Register}></Route>
             // </Switch> */}
             <div>
-                <Route path='/'  component={Home} />
+                <Route path='/' component={Home} />
                 <Route path='/register' component={Register}/>
                 <Route path='/login' component={Login}/>
                 <Route path='/addpets' component={AddPets}/>
