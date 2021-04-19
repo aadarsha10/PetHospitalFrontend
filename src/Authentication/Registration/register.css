@@ -1,0 +1,19 @@
+#regBox{
+    margin: auto;
+    width: auto;
+    background-color: #F7FBF7;
+    border-radius: 20px;
+    padding: 50px;
+}
+
+.inputBox{
+    width: 100%;
+    position: relative;
+    
+}
+
+.submitBtn{
+    align-items: center;
+    justify-content: center;
+}
+

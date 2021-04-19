@@ -1,0 +1,80 @@
+#jumbotron {
+    background-color: #226F52;
+    color: #fff;
+
+}
+
+#subBtn{
+    position: static;
+}
+
+#aimDiv{
+    background-color: #fff;
+    padding-bottom: 10px;
+    padding-top: 10px;
+
+}
+
+#aimDiv .row .col-sm-7 h2{
+    color: #66AA90;
+}
+
+#aimDiv .row .col-sm-7 h4{
+    color: #66AA90;
+}
+
+#aimDiv .row .col-sm-7 h5{
+    color: #66AA90;
+}
+
+
+#desc{
+    height: 100%;
+    width: 50%;
+    fill: #fff;
+    
+}
+
+#services h2{
+    color: black;
+}
+
+#services h4{
+    color: black;
+}
+
+#services .row .col-sm-4 img{
+    height: 50%;
+    width: 80%;
+    padding-bottom: 10px;
+}
+
+.carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #f4511e;
+  }
+  
+  .carousel-indicators li {
+    border-color: #f4511e;
+  }
+  
+  .carousel-indicators li.active {
+    background-color: #f4511e;
+  }
+  
+  .item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+  }
+  
+  .item span {
+    font-style: normal;
+  }
+
+  #myCarousel{
+      background-color: darkslategray;
+      color: white;
+  }
