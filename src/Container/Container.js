@@ -18,9 +18,9 @@ class Container extends Component{
                 // <Route path='/register' component={Register}></Route>
             // </Switch> */}
             <div>
-                <Route path='/' component={Home} />
-                <Route path='/register' component={Register}/>
-                <Route path='/login' component={Login}/>
+                <Route path='/home' component={Home} />
+                <Route path='/register' exact component={Register}/>
+                <Route path='/login' exact component={Login}/>
                 <Route path='/addpets' component={AddPets}/>
                 <Route path='/updatePet' component={UpdatePet}/>
                 <Route path='/pet/all' component={Pets}/>
