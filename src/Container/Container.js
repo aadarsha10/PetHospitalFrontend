@@ -26,7 +26,7 @@ class Container extends Component{
                 <Route path='/updatePet' component={UpdatePet}/>
                 <Route path='/pet/all' component={Pets}/>
                 <Route path='/booking/user' exact component={BookAppointment}/>
-                <Route path='/UserLanding' component={UserLanding}/>
+                {/* <Route path='/UserLanding' component={UserLanding}/> */}
             </div>
     )
         
@@ -34,3 +34,4 @@ class Container extends Component{
 }
 
 export default Container;
+

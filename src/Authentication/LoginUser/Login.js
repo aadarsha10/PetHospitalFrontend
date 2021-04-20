@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 // import '../scss/Register.scss'
+import { Button, TextField} from '@material-ui/core'
+
 
 
 const Login = ({ history }) => {
@@ -37,7 +39,6 @@ const Login = ({ history }) => {
     const goToLanding = () => {
         history.push("/booking/user");
     }
-
     return (
 
         <div>
@@ -60,7 +61,7 @@ const Login = ({ history }) => {
                                 <Button variant="contained" color="primary" className="submitBtn" onClick={loginstart}>Login</Button>
                                 </form>
 
-                                <Link to='/admin login'><p><u>Sign In as Admin</u></p></Link>
+                                <Link to='/adminlogin'><p><u>Sign In as Admin</u></p></Link>
                             </div>
 
                         </div>
