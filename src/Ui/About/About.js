@@ -17,7 +17,7 @@ export default class About extends Component {
             <div>
                 <div className="jumbotron text-center" id="jumbotron">
                     <h1>HIRE FOR AUDIT</h1>
-                    <p style={{color : "white"}}>We specialize in providing a platform for both accountants and clients</p>
+                    <p style={{ color: "white" }}>We specialize in providing a platform for both accountants and clients</p>
                     <form class="form-inline">
                         <div className="input-group container" id="subBtn">
                             <input type="email" class="form-control" size="50" placeholder="Email Address" />
@@ -94,27 +94,19 @@ export default class About extends Component {
                 </div>
 
                 <div>
-                    <h2 className="text-center" style={{fontStyle : "oblique"}}>What our customers say</h2>
+                    <h2 className="text-center" style={{ fontStyle: "oblique" }}>What our customers say</h2>
                     <div id="myCarousel" className="carousel slide text-center" data-ride="carousel">
                         <div className="carousel-inner" role="listbox">
+                            <div className="item ">
+                                <h4>"Welcome to a homely environment for ur dog."<br /><span>Jimmy joe, employee</span></h4>
+                            </div>
                             <div className="item active">
-                                <h4>"This applications is the best. I am so working through it"<br /><span>Jimmy Mcgill, JM Firm</span></h4>
-                            </div>
-                            <div className="item">
-                                <h4>"One word... WOW!!"<br /><span>John Doe, CFO</span></h4>
-                            </div>
-                            <div className="item">
-                                <h4>"Could I... BE any more happy with this app?"<br /><span>Chandler Bing, Senior Accountant</span></h4>
+                                <h4>"Good Service! GOODER DOGGOS"<br /><span>John Doe, CEO</span></h4>
                             </div>
                         </div>
                     </div>
                 </div>
-
-
             </div>
-
-
-
         )
     }
 }
