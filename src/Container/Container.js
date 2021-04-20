@@ -8,6 +8,7 @@ import { Sidebar } from "../NavBar/SideNav";
 import Register from "../Authentication/Registration/Register";
 import Login from "../Authentication/LoginUser/Login";
 import Home from "../Ui/Home/Home";
+import BookAppointment from "./BookAppointment";
 
 class Container extends Component{
     render(){
@@ -24,6 +25,8 @@ class Container extends Component{
                 <Route path='/addpets' component={AddPets}/>
                 <Route path='/updatePet' component={UpdatePet}/>
                 <Route path='/pet/all' component={Pets}/>
+                <Route path='/booking/user' exact component={BookAppointment}/>
+                <Route path='/UserLanding' component={UserLanding}/>
             </div>
     )
         

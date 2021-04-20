@@ -16,9 +16,9 @@ export default class ViewAccountants extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:90/accountant/all')
+        axios.get('http://localhost:90/pets/user')
             .then((allData) => {
-                console.log('allllllllllllllllll',allData)
+                console.log('petss users',allData)
 
                 this.setState({
                     accountants: allData.data
@@ -32,9 +32,6 @@ export default class ViewAccountants extends Component {
 
 
     }
-
-    
-
     render() {
         return (
             <div>
@@ -44,8 +41,6 @@ export default class ViewAccountants extends Component {
                         return(
                             <div class="col-lg-4 mb-4">
                                 <div class="card">
-                                    
-                                    <img src={'http://localhost:90/' + accountants.accountantImage } alt="accountantImg" class="card-img-top" />
                                     <div class="card-body">
                                         <h5 class="card-title">{accountants.accountantFName + ' '+ accountants.accountantLName}</h5>
                                         <p class="card-text">Experience in years : {accountants.accountantExperience}</p>

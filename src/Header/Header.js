@@ -1,43 +1,65 @@
-import React, {Component} from 'react';
+import React, {useState} from 'react';
+import styled from "styled-components";
 
-class Header extends Component{
-    render(){
-    return (
-        // <!-- Navigation -->
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-          <div className="container">
-            <a className="navbar-brand" href="#">VetForPet Welcomes You!</a>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-              <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarResponsive">
-              <ul className="navbar-nav ml-auto">
-                <li className="nav-item active">
-                  <a className="nav-link" href="/home">Home
-                    <span className="sr-only">(current)</span>
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="/about">About</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="/register">Register</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="/services">Services</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="/contact">Contact</a>
-                </li>
-                <li className="btn-primary">
-                  <a className="nav-link" href="/login">Login</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      
-    )
-}
-}
+import {Link} from 'react-router-dom'
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  var navitem = localStorage.getItem('token')
+
+  if(localStorage.getItem('token') &&  localStorage.getItem('username')=== "admin" )
+  {
+    var menu = 
+    <div>
+        <Link to='/home'><MenuLink >Home</MenuLink></Link>
+        <Link to='/bookings'><MenuLink href="">Bookings</MenuLink></Link>
+        <Link to='/pets/all'><MenuLink href="">Pets</MenuLink></Link>
+        {/* <Link to='/about' ><MenuLink href="">My Users</MenuLink></Link> */} 
+        {/* future work */}
+        <Link to='/logout'><MenuLink href="">Logout</MenuLink></Link> 
+    </div>
+     
+  }
+  else if(localStorage.getItem('token') && localStorage.getItem('username'))
+  {
+    var menu = 
+    <div>
+        <Link to='/home'><MenuLink >Home</MenuLink></Link>
+        <Link to='/contact'><MenuLink href="">Contact</MenuLink></Link>
+        <Link to= '/pets/user'><MenuLink href="">Pets</MenuLink></Link>
+        <Link to='/about' ><MenuLink href="">About</MenuLink></Link> 
+        <Link to='/booking/user' ><MenuLink href="">My bookings</MenuLink></Link> 
+        <Link to='/logout' ><MenuLink href="">Logout</MenuLink></Link> 
+    </div>
+  }
+  else{
+    var menu = 
+      <div>
+        <Link to='/home' ><MenuLink >Home</MenuLink></Link>
+        <Link to='/about' ><MenuLink href="">About</MenuLink></Link> 
+        <Link to='/contact'><MenuLink href="">Contact</MenuLink></Link>
+        <Link to= '/register' ><MenuLink href="">Register</MenuLink></Link>
+        <Link to='/login' ><MenuLink href="">Login</MenuLink></Link>
+      </div>
+  }
+
+  return (
+    <div><Nav>
+    <Logo href="/">
+      Hire  For Audit
+    </Logo>
+    <Hamburger onClick={() => setIsOpen(!isOpen)}>
+      <span />
+      <span />
+      <span />
+    </Hamburger>
+    <Menu isOpen={isOpen}>
+        {menu}
+    </Menu>
+  </Nav>
+ 
+  </div>
+    
+  );
+};
 export default Header;
