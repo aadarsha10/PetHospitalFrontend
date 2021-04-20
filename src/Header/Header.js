@@ -24,8 +24,9 @@ const Navbar = () => {
       <div>
         <Link to='/home'><MenuLink >Home</MenuLink></Link>
         <Link to='/contact'><MenuLink href="">Contact</MenuLink></Link>
-        <Link to='/pets/user'><MenuLink href="">Pets</MenuLink></Link>
+        <Link to='/pets/user'><MenuLink href="">View Pets</MenuLink></Link>
         <Link to='/about'><MenuLink href="">About</MenuLink></Link>
+        <Link to='/pet/insert'><MenuLink href="">Add Pets</MenuLink></Link>
         <Link to='/booking/user' ><MenuLink href="">My bookings</MenuLink></Link>
         <Link to='/logout' ><MenuLink href="">Logout</MenuLink></Link>
       </div>

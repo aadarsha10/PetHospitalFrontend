@@ -8,7 +8,7 @@ import { Sidebar } from "../NavBar/SideNav";
 import Register from "../Authentication/Registration/Register";
 import Login from "../Authentication/LoginUser/Login";
 import Home from "../Ui/Home/Home";
-import BookAppointment from "./BookAppointment";
+import BookAppointment from "../Ui/Appointment/BookAppointment";
 
 class Container extends Component{
     render(){
@@ -25,7 +25,9 @@ class Container extends Component{
                 <Route path='/addpets' component={AddPets}/>
                 <Route path='/updatePet' component={UpdatePet}/>
                 <Route path='/pet/all' component={Pets}/>
+                <Route path='/pet/insert' component={AddPets}/>
                 <Route path='/booking/user' exact component={BookAppointment}/>
+                {/* <Route path='/booking/user/view' exact component={viewAppoitment}/> */}
                 {/* <Route path='/UserLanding' component={UserLanding}/> */}
             </div>
     )
