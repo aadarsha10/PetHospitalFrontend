@@ -1,76 +1,98 @@
-import React, {Component} from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import { error, event } from 'jquery';
 import { Button, TextField, FormControl, FormLabel, Radio, Input } from '@material-ui/core'
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import './register.css'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
-class Register extends Component{
+export default function Register() {
 
-    state = {
-        fname : "",
-        lname : "",
-        username : "",
-        email : "",
-        password : ""
-    }
-    registeruser = (e) =>{
-        e.preventDefault();
-        const data = new FormData()
+    const [fname, setfname] = useState("")
+    const [lname, setlname] = useState("")
+    const [email, setEmail] = useState("")
+    const [username, setUsername] = useState("")
+    const [password, setPassword] = useState("")
+    const [response1, setResponse] = useState("");
+    const [checkLogin, setLoginCheck] = useState(false);
 
-        data.append('firstName', this.state.fname)
-        data.append('lasttName', this.state.lname)
-        data.append('email', this.state.email)
-        data.append('userName', this.state.username)
-        data.append('password', this.state.password)
 
-        axios.post("https://localhost:90/register",data)
-        .then(response=>{
-            console.log(response)
-            window.location.href = '/home'
+    const registeruser = (e) => {
+        e.preventDefault()
+        console.log(fname, lname, email, username, password)
+        const data = {
+            fname: fname,
+            lname: lname,
+            email: email,
+            username: username,
+            password: password
+
+        }
+
+        axios.post("http://localhost:90/Register", data).then(response => {
+            console.log(response.data.message)
+            setResponse(response.data.message)
+
+        }).catch(error => {
+            console.log(error)
         })
-        .catch(error=>{
-            console.log(error);
-        });
+
+        console.log("response1", response1)
+
+        if (response1 == "Registered") {
+            alert("You have successfully Registered ")
+            setLoginCheck(true);
+        }
+
+
     }
-    handleChange = (e) => {
-        this.setState({
-            [e.target.name]: e.target.value
-        })
+
+    const history = useHistory()
+    const goToLogin = () => {
+        history.push("/login");
     }
-    render(){
     return (
         <div>
-        <div className="container">
-            <h1 className="text-center">User Registration</h1>
+            {
+                !checkLogin &&
 
-            <div className="row">
+                <div>
+                    <div className="container">
+                        <h1 className="text-center">User Registration</h1>
 
-                <div className='col-md-6' id="regBox">
-                    <form id="registrationForm" method="POST" action="">
-                        <TextField type="text" label="Enter first name" variant="outlined" className="inputBox" name="firstName" required onChange={this.handleChange}></TextField>&nbsp;
-                        <TextField type="text" label="Enter last name" variant="outlined" className="inputBox" name="lastName" required onChange={this.handleChange}></TextField>&nbsp;
-                        <TextField type="email" label="Enter email address" variant="outlined" className="inputBox" name="emailAddress" style={{ marginBottom: "20px" }}
-                         required onChange={this.handleChange}></TextField>&nbsp;
+                        <div className="row">
 
-                        <TextField label="Enter Username" variant="outlined" className="inputBox" type="text" onChange={this.handleChange} required name="username"></TextField>&nbsp;
+                            <div className='col-md-6' id="regBox">
+                                <form id="registrationForm" method="POST" action="">
+                                    <TextField type="text" label="Enter first name" variant="outlined" className="inputBox" name="firstName" required value={fname} onChange={(event) => { return setfname(event.target.value) }}></TextField>&nbsp;
+                                    <TextField type="text" label="Enter last name" variant="outlined" className="inputBox" name="lastName" required value={lname} onChange={(event) => { return setlname(event.target.value) }}></TextField>&nbsp;
+                                    <TextField type="email" label="Enter email address" variant="outlined" className="inputBox" name="emailAddress" style={{ marginBottom: "20px" }}
+                                        required value={email} onChange={(event) => { return setEmail(event.target.value) }}></TextField>&nbsp;
 
-                        <TextField label="Enter a password" variant="outlined" className="inputBox" type="password" onChange={this.handleChange}
-                            name="password" required style={{ marginBottom: "20px" }}></TextField>&nbsp;
+                        <TextField label="Enter Username" variant="outlined" className="inputBox" type="text" value={username} onChange={(event) => { return setUsername(event.target.value) }} required name="username"></TextField>&nbsp;
+
+                        <TextField label="Enter a password" variant="outlined" className="inputBox" type="password" value={password} onChange={(event) => { return setPassword(event.target.value) }}
+                                        name="password" required style={{ marginBottom: "20px" }}></TextField>&nbsp;
 
                         {/* <p><Input type="file" color="primary" style={{ marginBottom: "20px" }} name="accountantImage" onChange={this.handleFile} >Upload your image</Input></p> */}
 
-                        <Button variant="outlined" color="primary" className="submitBtn" onClick={this.registeruser}>Register</Button>
+                                    <Button variant="outlined" color="primary" className="submitBtn" onClick={registeruser}>Register</Button>
 
-                        <Link to='/login'><p><u>Click here to Login</u></p></Link>
-                    </form>
+                                    <Link to='/login'><p><u>Click here to Login</u></p></Link>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
 
-            </div>
+            }
+            {
+                checkLogin &&
+                goToLogin()
+            }
+
         </div>
-    </div>
-        )
-    }
+
+    )
 }
-export default Register;
