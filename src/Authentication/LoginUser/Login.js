@@ -24,7 +24,7 @@ const Login = ({ history }) => {
                 localStorage.setItem('token', response.data.token)
                 localStorage.setItem('fname', response.data.fname)
                 localStorage.setItem('lname', response.data.lname)
-                localStorage.setItem('username', response.data.username)
+                localStorage.setItem('username', response.data.Username)
                 localStorage.setItem('email', response.data.email)
                 setCheckLogin(true)
                 console.log("username", localStorage.getItem('username'))

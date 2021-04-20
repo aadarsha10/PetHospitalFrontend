@@ -1,73 +1,89 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import { error, event } from 'jquery';
-class AddPets extends Component {
+import { Button, TextField, FormControl, FormLabel, Radio, Input } from '@material-ui/core'
+// import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import { Link, useHistory } from 'react-router-dom'
 
-    state = {
-        Petname: "",
-        PetAge: "",
-        PetType: "",
-        PetBreed: "",
-    }
-    sendPetData = (e) => {
-        e.preventDefault();//prevents form to refresh the page and loose all state
+export default function RegisterPet() {
+
+    const [petName, setPetname] = useState("")
+    const [petAge, setAge] = useState("")
+    const [petType, setType] = useState("")
+    const [petBreed, setBreed] = useState("")
+    const [petGender, setGender] = useState("")
+    const [petMedicalHistory, setMedical] = useState("")
+    const username = localStorage.getItem('username')
+    const [response1, setResponse] = useState("");
+    const [checkLogin, setLoginCheck] = useState(false);
+
+
+    const registerpet = (e) => {
+        e.preventDefault()
+        console.log(petName, petType, petBreed, petGender)
         const data = {
-            Petname: this.state.Petname,
-            PetAge: this.state.PetAge,
-            PetType: this.state.PetType,
-            PetBreed: this.state.PetBreed
+            petName: petName,
+            petAge: petAge,
+            petType: petType,
+            petBreed: petBreed,
+            petGender: petGender,
+            petMedicalHistory: petMedicalHistory,
+            userName: username
+
         }
-        axios.post("https://localhost:90/addpets", data)
-            .then(response => {
-                console.log(response)
-            })
-            .catch(error => {
-                console.log(error)
-            });
+
+        axios.post("http://localhost:90/pet/insert", data).then(response => {
+            console.log(response.data.message)
+            setResponse(response.data.message)
+
+        }).catch(error => {
+            console.log(error)
+        })
+
+        console.log("response1", response1)
+
+        if (response1 == "Registered") {
+            alert("You have successfully Registered ")
+            setLoginCheck(true);
+        }
+
+
     }
 
-    render() {
-        return (
-            <div>
+    const history = useHistory()
+    const goToView = () => {
+        history.push("/login");
+    }
+    return (
+        <div>
+            {
                 <div>
-                    <div className="container">
-                        <h1 className="text-center"></h1>
-                        <div className="row">
-                            <div className='col-md-6' id="regBox">
-                            <form>
-                    <div class="form-group">
-                        <label for="PetName">PetName</label>
-                        <p><input type="text" class="form-control" id="PetName" placeholder="Pet Name" 
-                        value={this.state.PetName}
-                        onChange = {(event)=>{this.setState({PetName:event.target.value})}}/></p>
-                    </div> 
-                    <div class="form-group">
-                        <label for="PetAge">PetAge</label>
-                        <p><input type="number" class="form-control" id="PetAge" placeholder="Pet Age" 
-                        value={this.state.PetAge}
-                        onChange = {(event)=>{this.setState({PetAge:event.target.value})}}/></p>
-                    </div>
-                    <div class="form-group">
-                        <label for="PetBreed">PetBreed</label>
-                        <input type="text" class="form-control" id="PetBreed" placeholder="Pet Breed"
-                        value={this.state.PetBreed}
-                        onChange = {(event)=>{this.setState({PetBreed:event.target.value})}}/>
-                    </div>
-                    <div class="form-group">
-                        <label for="PetType">PetType</label>
-                        <input type="text" class="form-control" id="PetType" placeholder="Pet Type"
-                        value={this.state.PetType}
-                        onChange = {(event)=>{this.setState({PetType:event.target.value})}}/>
-                    </div>
-                
-                    <button type="submit" class="btn btn-primary" onClick={this.sendPetData}>Add Pets</button>
-                </form>
+                    <div>
+                        <div className="container">
+                            <h1 className="text-center"></h1>
+                            <div className="row">
+                                <div className="row">
+
+                                    <div className='col-md-6' id="regBox">
+                                        <form id="registrationForm" method="POST" action="">
+                                            <TextField type="text" label="Enter Pet Name" variant="outlined" className="inputBox" name="petname" required value={petName} onChange={(event) => { return setPetname(event.target.value) }}></TextField>&nbsp;
+                                <TextField type="number" label="Enter Phone Number" variant="outlined" className="inputBox" name="phone" required value={petAge} onChange={(event) => { return setAge(event.target.value) }}></TextField>&nbsp;
+                                <TextField type="text" label="Enter Pet Name" variant="outlined" className="inputBox" name="petname" required value={petGender} onChange={(event) => { return setGender(event.target.value) }}></TextField>&nbsp;
+                                <TextField type="text" label="Enter Pet Name" variant="outlined" className="inputBox" name="petname" required value={petType} onChange={(event) => { return setType(event.target.value) }}></TextField>&nbsp;
+                                <TextField type="text" label="Enter Pet Name" variant="outlined" className="inputBox" name="petname" required value={petBreed} onChange={(event) => { return setBreed(event.target.value) }}></TextField>&nbsp;
+
+                                <TextField type="reason" label="Username" disabled variant="outlined" className="inputBox" name="reason" style={{ marginBottom: "20px" }}
+                                                required value={username}></TextField>&nbsp;
+                                <Button variant="outlined" color="primary" className="submitBtn" onClick={registerpet}>Confirm</Button>
+                                        </form>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        )
-    }
+            }
+        </div>
+    )
 }
-export default AddPets;
+

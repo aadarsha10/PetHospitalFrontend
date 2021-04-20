@@ -9,6 +9,9 @@ import Register from "../Authentication/Registration/Register";
 import Login from "../Authentication/LoginUser/Login";
 import Home from "../Ui/Home/Home";
 import BookAppointment from "../Ui/Appointment/BookAppointment";
+import GetuserBooking from "../Ui/Appointment/ViewBooking";
+import Profile from "../Ui/About/About";
+import Logout from "../Authentication/Logout/Logout";
 
 class Container extends Component{
     render(){
@@ -27,7 +30,10 @@ class Container extends Component{
                 <Route path='/pet/all' component={Pets}/>
                 <Route path='/pet/insert' component={AddPets}/>
                 <Route path='/booking/user' exact component={BookAppointment}/>
-                {/* <Route path='/booking/user/view' exact component={viewAppoitment}/> */}
+                <Route path='/booking/username' exact component={GetuserBooking}/>
+                <Route path='/about' exact component={Profile}/>
+                <Route path='/logout' exact component={Logout}/>
+                
                 {/* <Route path='/UserLanding' component={UserLanding}/> */}
             </div>
     )

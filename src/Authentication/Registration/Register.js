@@ -29,10 +29,10 @@ export default function Register() {
 
         }
 
-        axios.post("http://localhost:90/Register", data).then(response => {
+        axios.post("http://localhost:90/register", data).then(response => {
             console.log(response.data.message)
             setResponse(response.data.message)
-
+            goToLogin()
         }).catch(error => {
             console.log(error)
         })

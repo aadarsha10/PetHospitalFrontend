@@ -13,7 +13,7 @@ class Pets extends Component{
     //to retrieve data from the url
 
     componentDidMount(){
-        axios.get("http://localhost:90/pet/all/")
+        axios.get("http://localhost:90/pet/user")
         .then((allData) => {
             console.log(allData)
 
@@ -28,7 +28,7 @@ class Pets extends Component{
 
 
     deleteProduct = (petId) =>{
-        axios.delete("http://localhost/pet/delete/", petId)
+        axios.delete("http://localhost/pet/delete", petId)
         .then(response =>{
             console.log(response)
         })

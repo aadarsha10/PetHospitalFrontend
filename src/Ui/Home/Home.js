@@ -42,7 +42,7 @@ export default class Home extends Component {
                     <div className="container">
                         <div className="row vertical-align-middle mt-5 mb-5">
                             <div className="col-md-6">
-                                <h1 className="text-inverse">With Hire for Audit, you can hire the available auditors and accoutants in order to improve your finanacial statements and performances.</h1>
+                                <h1 className="text-inverse">Here at Vet for Pet, We provide best care for ur beloved furry friends..</h1>
                             </div>
 
                         </div>
@@ -58,35 +58,35 @@ export default class Home extends Component {
                 </div>
                 <div className="container full-page mt-5" id="resources">
                     <div className="text-center mb-5">
-                        <h2>Benefits of using the application</h2>
+                        <h2>Work Ethics</h2>
                     </div>
                     <div className="row d-flex justify-content-between">
                         <div className="col-md-4 mb-4">
                             <div className="card text-center">
-                                <img className="card-img-top" src="./finance.jpg" alt="cardImg" />
+                            <img className="img-responsive" alt="card1" src="./dog.jpg"/>
                                 <div className="card-body">
-                                    <h4 className="card-title">Financial growth</h4>
-                                    <p className="card-text">With the help of the auditors and accountants, you can gain boost in your monetary value.</p>
+                                    <h4 className="card-title">Internal growth</h4>
+                                    <p className="card-text">Helping those who can't speak.</p>
 
                                 </div>
                             </div>
                         </div>
                         <div className="col-md-4 mb-4">
                             <div className="card text-center">
-                                <img className="card-img-top" src="./handshake.jpg" alt="cardImg" />
+                            <img className="img-responsive" alt="Chania" src="./windoge.jpg"/>
                                 <div className="card-body">
-                                    <h4 className="card-title">Find the right man</h4>
-                                    <p className="card-text">We guarantee you will find the perfect temporary staffs for your financial tasks.</p>
+                                    <h4 className="card-title">Easy Services.</h4>
+                                    <p className="card-text">No problems in providingsupporyt.</p>
 
                                 </div>
                             </div>
                         </div>
                         <div className="col-md-4 mb-4">
                             <div className="card text-center">
-                                <img className="card-img-top" src="./comms.jpg" alt="Card image cap" />
+                            <img className="img-responsive" alt="Chania" src="./dog.jpg"/>
                                 <div className="card-body">
-                                    <h4 className="card-title">Clear communication</h4>
-                                    <p className="card-text">With the help of our applicatio, expect clearcut communication with your hired accountants</p>
+                                    <h4 className="card-title">Loreum Ipsium</h4>
+                                    <p className="card-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
 
                                 </div>
                             </div>
@@ -97,12 +97,11 @@ export default class Home extends Component {
                     <div className="container">
                         <div className="row">
                             <div className="col-md-6">
-                                <img src="./question.svg"></img>
+                                <img src="./handshake.jpg"></img>
                             </div>
                             <div className="col-md-6">
                                 <h2>About us</h2>
-                                <p>Excellent Business Plans’ team of start-up and business professionals will e
-            xpertly guide you through the process of facilitating growth, meeting your business goals and taking your start-up dreams and making them a reality. Our goal is to improve your business performance.</p>
+                                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
                                 <Link to='/about'> <Button className="submitBtn" variant="contained" color="primary">Learn more</Button></Link>
                             </div>
                         </div>
